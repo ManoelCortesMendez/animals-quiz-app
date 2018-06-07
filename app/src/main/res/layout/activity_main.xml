@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    style="@style/root_scroll_view"
+    tools:context=".MainActivity">
+
+    <LinearLayout style="@style/root_linear_layout">
+
+        <!--Question 1: Flamingo-->
+
+        <LinearLayout style="@style/card_linear_layout">
+
+            <ImageView
+                style="@style/animal_image"
+                android:src="@drawable/flamingo"
+                android:contentDescription="@string/flamingo_description" />
+
+            <TextView
+                style="@style/question_text"
+                android:text="@string/flamingo_question" />
+
+            <RadioGroup
+                android:id="@+id/flamingo_group"
+                style="@style/answer_radio_group">
+
+                <RadioButton
+                    style="@style/answer_radio_option"
+                    android:text="@string/flamingo_answer_option_1" />
+
+                <RadioButton
+                    style="@style/answer_radio_option"
+                    android:text="@string/flamingo_answer_option_2" />
+
+                <RadioButton
+
+                    android:id="@+id/flamingo_solution"
+                    style="@style/answer_radio_option"
+                    android:text="@string/flamingo_answer_option_3" />
+
+                <RadioButton
+
+                    style="@style/answer_radio_option"
+                    android:text="@string/flamingo_answer_option_4" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--Question 2: lion-->
+
+        <LinearLayout style="@style/card_linear_layout">
+
+            <ImageView
+
+                style="@style/animal_image"
+                android:src="@drawable/lion"
+                android:contentDescription="@string/lion_description" />
+
+            <TextView
+                style="@style/question_text"
+                android:text="@string/lion_question" />
+
+            <LinearLayout style="@style/answer_checkbox_linear_layout">
+
+                <CheckBox
+                    android:id="@+id/lion_solution_leopard"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/lion_answer_option_leopard" />
+
+                <CheckBox
+
+                    android:id="@+id/lion_solution_lion"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/lion_answer_option_lion" />
+
+                <CheckBox
+
+                    android:id="@+id/lion_solution_jaguar"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/lion_answer_option_jaguar" />
+
+                <CheckBox
+
+                    android:id="@+id/lion_solution_tiger"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/lion_answer_option_tiger" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Question 3: Shark-->
+
+        <LinearLayout style="@style/card_linear_layout">
+
+            <ImageView
+
+                style="@style/animal_image"
+                android:src="@drawable/shark"
+                android:contentDescription="@string/shark_description" />
+
+            <TextView
+                style="@style/question_text"
+                android:text="@string/shark_question" />
+
+            <EditText
+                android:id="@+id/shark_answer_input_field"
+                style="@style/answer_input_field"
+                android:hint="@string/shark_input_field_hint" />
+
+        </LinearLayout>
+
+        <!--Question 4: Elephant-->
+
+        <LinearLayout style="@style/card_linear_layout">
+
+            <ImageView
+                style="@style/animal_image"
+                android:src="@drawable/elephant"
+                android:contentDescription="@string/elephant_description" />
+
+            <TextView
+                style="@style/question_text"
+                android:text="@string/elephant_question" />
+
+            <RadioGroup
+                android:id="@+id/elephant_group"
+                style="@style/answer_radio_group">
+
+                <RadioButton
+                    style="@style/answer_radio_option"
+                    android:text="@string/elephant_answer_option_3_months" />
+
+                <RadioButton
+                    style="@style/answer_radio_option"
+                    android:text="@string/elephant_answer_option_9_months" />
+
+                <RadioButton
+                    android:id="@+id/elephant_solution"
+                    style="@style/answer_radio_option"
+                    android:text="@string/elephant_answer_option_22_months" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--Question 5: Polar Bear-->
+
+        <LinearLayout style="@style/card_linear_layout">
+
+            <ImageView
+
+                style="@style/animal_image"
+                android:src="@drawable/polarbear"
+                android:contentDescription="@string/polar_bear_description" />
+
+            <TextView
+                style="@style/question_text"
+                android:text="@string/polarbear_question" />
+
+            <LinearLayout style="@style/answer_checkbox_linear_layout">
+
+                <CheckBox
+                    android:id="@+id/polarbear_solution_arctic"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/polarbear_answer_option_arctic" />
+
+                <CheckBox
+                    android:id="@+id/polarbear_solution_antarctica"
+                    style="@style/answer_checkbox_option"
+                    android:text="@string/polarbear_answer_option_antarctica" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Button-->
+
+        <Button
+            style="@style/compute_score_button"
+            android:onClick="scoreQuiz"
+            android:text="@string/compute_score_button_label" />
+
+        <!--Results-->
+
+        <LinearLayout
+            android:id="@+id/results_root_linear_layout"
+            style="@style/results_root_linear_layout">
+
+            <!--Score-->
+
+            <TextView
+                style="@style/score_and_feedback_headings"
+                android:text="@string/score_heading" />
+
+            <TextView
+                android:id="@+id/score"
+                style="@style/score" />
+
+            <!--Feedback-->
+
+            <TextView
+                style="@style/score_and_feedback_headings"
+                android:text="@string/feedback_heading" />
+
+            <LinearLayout style="@style/feedback_group_linear_layout">
+
+                <!--Feedback Answer 1-->
+
+                <LinearLayout style="@style/feedback_item_horizontal_layout">
+
+                    <TextView
+                        android:id="@+id/flamingo_feedback"
+                        style="@style/correct_or_incorrect_text"
+                        android:text="@string/flamingo_correct_answer" />
+
+                    <TextView
+                        style="@style/solution_explanation"
+                        android:text="@string/flamingo_answer_explanation" />
+
+                </LinearLayout>
+
+                <!--Feedback Answer 2-->
+
+                <LinearLayout style="@style/feedback_item_horizontal_layout">
+
+                    <TextView
+
+                        android:id="@+id/lion_feedback"
+                        style="@style/correct_or_incorrect_text"
+                        android:text="@string/lion_incorrect_answer" />
+
+                    <TextView
+                        style="@style/solution_explanation"
+                        android:text="@string/lion_answer_explanation" />
+
+                </LinearLayout>
+
+                <!--Feedback Answer 3-->
+
+                <LinearLayout style="@style/feedback_item_horizontal_layout">
+
+                    <TextView
+
+                        android:id="@+id/shark_feedback"
+                        style="@style/correct_or_incorrect_text"
+                        android:text="@string/shark_correct_answer" />
+
+                    <TextView
+
+                        style="@style/solution_explanation"
+                        android:text="@string/shark_answer_explanation" />
+
+                </LinearLayout>
+
+                <!--Feedback Answer 4-->
+
+                <LinearLayout style="@style/feedback_item_horizontal_layout">
+
+                    <TextView
+
+                        android:id="@+id/elephant_feedback"
+                        style="@style/correct_or_incorrect_text"
+                        android:text="@string/elephant_incorrect_answer" />
+
+                    <TextView
+
+                        style="@style/solution_explanation"
+                        android:text="@string/elephant_answer_explanation" />
+
+                </LinearLayout>
+
+                <!--Feedback Answer 5 Polar Bear-->
+
+                <LinearLayout style="@style/feedback_item_horizontal_layout">
+
+                    <TextView
+
+                        android:id="@+id/polarbear_feedback"
+                        style="@style/correct_or_incorrect_text"
+                        android:text="@string/polarbear_incorrect_answer" />
+
+                    <TextView
+                        style="@style/solution_explanation"
+                        android:text="@string/polarbear_answer_explanation" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
