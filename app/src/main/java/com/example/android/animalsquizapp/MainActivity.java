@@ -137,14 +137,6 @@ public class MainActivity extends AppCompatActivity {
                 scrollview.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
-
-        // Show Toast (only to satisfy project requirements; remove later)
-        Context context = getApplicationContext();
-        CharSequence text = "Your score is: " + score + " / " + results.size();
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
     }
 
     private void setFeedback(int feedbackId, int questionNumber, ArrayList<Boolean> results) {
