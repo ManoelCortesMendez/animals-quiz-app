@@ -137,11 +137,19 @@ public class MainActivity extends AppCompatActivity {
                 scrollview.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
+
+        // Show toast (only to meet Udacity requirements; remove later)
+        Context context = getApplicationContext();
+        CharSequence text = "Your score: " + score + " / " + results.size();
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     private void setFeedback(int feedbackId, int questionNumber, ArrayList<Boolean> results) {
         TextView feedbackTextView = (TextView) findViewById(feedbackId);
-        if (results.get(questionNumber - 1) == true) {
+        if (results.get(questionNumber - 1)) {
             feedbackTextView.setText(questionNumber + ". Correct");
         } else {
             feedbackTextView.setText(questionNumber + ". Incorrect");
@@ -152,11 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         RadioGroup radioGroup = (RadioGroup) findViewById(groupId);
 
-        if (radioGroup.getCheckedRadioButtonId() == solutionId) {
-            return true;
-        } else {
-            return false;
-        }
+        return radioGroup.getCheckedRadioButtonId() == solutionId;
     }
 
     private boolean scoreCheckbox(List<Integer> solutionIds, List<Integer> optionIds) {
